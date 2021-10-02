@@ -20,7 +20,7 @@ int main(){
         magicSquareGenerator(square);
         found = magicSquareCheck(square);
         count++;
-            printf("%d", count);
+        //printf("%d\n", count);
     }
         
     printf("It took %d tries to get a Lo Shu Magic Square\n", count);
@@ -41,9 +41,10 @@ void magicSquareGenerator(int square[3][3]){
         for(int colm = 0; colm < 3; colm++){
             //check if it is repeated value
             while(!found){
-                value = (rand() % 8) + 1;
+                value = (rand() % 9) + 1;
                 found = false;
                 for(int i = 0; i < 9;i++){
+                    //printf("%d   %d\n", num[i], value);
                     if(num[i] == value){
                         found = true;
                     }
@@ -88,6 +89,6 @@ bool magicSquareCheck(int square[3][3]){
         }
     }
 
-    return fail;
+    return !fail;
 }
 
